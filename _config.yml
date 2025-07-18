@@ -7,12 +7,14 @@ url: ""
 
 # 在原有基础上添加导航配置
 navigation:
-  - name: "AirStar"
-    url: https://buaa-colalab.github.io/airstar.github.io/
   - name: "OpenUAV"
     url: https://prince687028.github.io/OpenUAV/
+  - name: "AirStar"
+    url: https://buaa-colalab.github.io/airstar.github.io/
   - name: "UAV-Flow"
     url: https://prince687028.github.io/UAV-Flow/
+  - name: "AeroDuo"
+    url: https://rey-nard.github.io/AeroDuo_project/
 
 # 添加轮播图片配置（不需要固定命名）
 carousel_images:
