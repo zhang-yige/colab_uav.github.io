@@ -17,7 +17,7 @@
   type: video
   video: "/assets/videos/aeroduo.mp4"
 
-- title: ""Hi AirStar, Guide Me to the Badminton Court.""
+- title: "Hi AirStar, Guide Me to the Badminton Court."
   description: "AirStar transforms drones into smart aerial companions by integrating a large language model as its cognitive core, enabling natural voice and gesture control for intuitive interaction. It combines geospatial navigation with real-time reasoning for precise movement, while offering advanced features like question answering, automated filming, and target tracking. Designed for extensibility, AirStar paves the way for next-gen, instruction-driven UAV assistants."
   url: https://buaa-colalab.github.io/airstar.github.io/
   type: video
