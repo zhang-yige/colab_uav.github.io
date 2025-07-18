@@ -1,7 +1,7 @@
 <div class="hero-carousel">
   {% for image in site.carousel_images %}
   <div class="carousel-slide {% if forloop.first %}active{% endif %}">
-    <img src="{{ '/assets/images/' | append: image | relative_url }}" alt="Project Image">
+    <img src="{{ 'assets/images/' | append: image | relative_url }}" alt="Project Image">
   </div>
   {% endfor %}
   
