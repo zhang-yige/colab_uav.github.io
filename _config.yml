@@ -16,9 +16,9 @@ navigation:
 
 # 添加轮播图片配置（不需要固定命名）
 carousel_images:
-  - aeroduo.png
-  - airstar.png
   - openuav.png
+  - aeroduo1.png
+  - airstar.png
   - uav_flow.png
 
 # Build settings
