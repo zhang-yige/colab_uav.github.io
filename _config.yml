@@ -2,8 +2,8 @@ title: Colab UAVs
 email: colalab@buaa.edu.cn
 description: >-
   Please concact us if you have any questions about the UAV projects.
-baseurl: "/colab_uav.github.io"
-url: https://zhang-yige.github.io/colab_uav.github.io/
+baseurl: "colab_uav.github.io"
+url: "https://zhang-yige.github.io/"
 
 # 在原有基础上添加导航配置
 navigation:
