@@ -1,0 +1,19 @@
+- title: "UAV Flow"
+  description: "UAV-Flow consists of a large-scale real-world dataset for language-conditioned UAV imitation learning, featuring multiple UAV platforms, diverse environments, and a wide range of fine-grained flight skill tasks. To enable systematic experimental analysis under the Flow task setting, we additionally provide a simulation-based evaluation protocol and deploy VLA models on real UAVs. To the best of our knowledge, this is the first real-world deployment of VLA models for language-guided UAV control in open environments."
+  url: https://prince687028.github.io/UAV-Flow/
+  type: video
+  video: "assets/videos/uav_flow.mp4"
+  image: "uav_flow.png"
+
+- title: "Project Beta"
+  description: "Swarm coordination between multiple UAVs in real-time."
+  url: "/projects/beta"
+  type: image
+  image: "beta_thumb.png"
+
+- title: "Project Gamma"
+  description: "High-altitude UAV imaging and terrain reconstruction."
+  url: "/projects/gamma"
+  type: video
+  video: "gamma_demo.mov"
+  image: "gamma_thumb.png"

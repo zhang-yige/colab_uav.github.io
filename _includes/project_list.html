@@ -1,0 +1,26 @@
+<!-- 添加一个有边距的容器 -->
+<div class="project-list-container" style="max-width: 1200px; margin: 0 auto; padding: 0 2em;">
+
+    <div class="project-list">
+      {% for project in site.data.projects %}
+        <div class="project-item" style="display: flex; margin-bottom: 2em;">
+          <div class="media" style="flex: 1;">
+            {% if project.video %}
+              <video width="100%" controls style="max-height: 300px;">
+                <source src="{{ project.video }}" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            {% elsif project.image %}
+              <img src="{{ project.image }}" alt="{{ project.title }}" style="max-width: 100%; max-height: 300px; object-fit: contain;">
+            {% endif %}
+          </div>
+          <div class="description" style="flex: 2; padding-left: 1em;">
+            <h3><a href="{{ project.url }}">{{ project.title }}</a></h3>
+            <p>{{ project.description }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  
+  </div>
+  

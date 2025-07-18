@@ -1,0 +1,28 @@
+title: Colab UAVs
+email: colalab@buaa.edu.cn
+description: >-
+  Please concact us if you have any questions about the UAV projects.
+baseurl: ""
+url: ""
+
+# 在原有基础上添加导航配置
+navigation:
+  - name: "AirStar"
+    url: https://buaa-colalab.github.io/airstar.github.io/
+  - name: "OpenUAV"
+    url: https://prince687028.github.io/OpenUAV/
+  - name: "UAV-Flow"
+    url: https://prince687028.github.io/UAV-Flow/
+
+# 添加轮播图片配置（不需要固定命名）
+carousel_images:
+  - "aeroduo.png"
+  - "airstar.png"
+  - "openuav.png"
+  - "uav_flow.png"
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
