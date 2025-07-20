@@ -1,10 +1,16 @@
 <div class="hero-carousel">
-  {% for image in site.carousel_images %}
-  <div class="carousel-slide {% if forloop.first %}active{% endif %}">
-    <img src="{{ '/assets/images/' | append: image | relative_url }}" alt="Project Image">
+  <div class="carousel-track">
+    {% for item in site.data.carousel_images %}
+    <div class="carousel-slide {% if forloop.first %}active{% endif %}">
+      <div class="carousel-image-container">
+        <img src="{{ '/assets/images/' | append: item.image | relative_url }}" alt="Project Image">
+      </div>
+      <p class="carousel-caption">{{ item.caption }}</p>
+    </div>
+    {% endfor %}
   </div>
-  {% endfor %}
-  
+
+  <!-- 控制按钮放在外层，定位于图片两侧 -->
   <button class="carousel-control prev">&#10094;</button>
   <button class="carousel-control next">&#10095;</button>
 </div>

@@ -1,0 +1,71 @@
+.hero-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  .carousel-track {
+    position: relative;
+    width: 100%;
+  }
+
+  .carousel-slide {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    &.active {
+      display: flex;
+    }
+
+    .carousel-image-container {
+      width: 100%;
+      height: 400px;
+      background-color: #f2f2f2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .carousel-caption {
+      margin-top: 0.75rem;
+      font-size: 1rem;
+      color: #333;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      max-width: 80%;
+    }
+  }
+
+  .carousel-control {
+    position: absolute;
+    top: 200px; // 与图片高度一半对齐（你设的高度是400px）
+    transform: translateY(-50%);
+    font-size: 2rem;
+    background-color: rgba(0,0,0,0.3);
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    z-index: 10;
+
+    &.prev {
+      left: 1rem;
+    }
+
+    &.next {
+      right: 1rem;
+    }
+
+    &:hover {
+      background-color: rgba(0,0,0,0.5);
+    }
+  }
+}

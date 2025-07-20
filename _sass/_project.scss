@@ -1,0 +1,56 @@
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 3rem auto;
+  max-width: 1000px;
+  padding: 0 1rem;
+}
+
+.project-card {
+  display: flex;
+  flex-wrap: wrap;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-video {
+  flex: 1 1 320px;
+  padding: 0.5rem;
+}
+
+.project-info {
+  flex: 2 1 400px;
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project-info h2 a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.project-info h2 a:hover {
+  text-decoration: underline;
+}
+
+.section-spacer {
+  height: 60px; /* 足够的空白高度 */
+  width: 100%;
+}
+
+.section-divider {
+  border: none;
+  border-top: 3px solid #ccc; /* 粗一点，更明显 */
+  margin: 40px 0;
+  width: 100%;
+}

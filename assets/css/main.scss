@@ -1,167 +1,93 @@
 ---
 ---
 
-/* 头部样式 */
-.site-header {
-  background: #fff;
-  padding: 1rem 2rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+@import "carousel";
+@import "project";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.header-wrapper {
+/* ======= Header 样式（响应式 + 黑字） ======= */
+#site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1rem 0;
+  background-color: transparent;
+  color: black; // 默认字体为黑色
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#site-header.scrolled {
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
+  flex-wrap: wrap;
 }
 
 .branding {
   display: flex;
   align-items: center;
-  gap: 1rem;
 }
 
-.site-logo {
+.branding img {
   height: 40px;
-  width: auto;
+  margin-right: 10px;
 }
 
 .site-name {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #333;
+  color: black;
 }
 
-.site-nav ul {
+.navbar {
   display: flex;
-  gap: 2rem;
-  list-style: none;
-}
-
-.site-nav a {
-  text-decoration: none;
-  color: #555;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-.site-nav a:hover {
-  color: #0066cc;
-}
-
-/* 轮播图样式 */
-.hero-carousel {
-  position: relative;
-  width: 100%;
-  height: 500px; /* 固定高度 */
-  max-height: 70vh;
-  overflow: hidden;
-  margin: 0 auto;
-  background: #f5f5f5; /* 空白处填充背景色 */
-}
-
-.carousel-slide {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-  display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
-  
-  img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain; /* 保持完整图片 */
+}
+
+.navbar a {
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  color: black;
+
+  &:hover {
+    text-decoration: underline;
   }
 }
 
-.carousel-slide.active {
-  opacity: 1;
+/* ======= Banner 图像样式 ======= */
+// banner 图像容器
+.banner-image {
+  margin-top: 80px; // 留出导航栏的空间
+  text-align: center;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
-.carousel-control {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
-  color: white;
-  border: none;
-  padding: 1rem;
-  cursor: pointer;
-  font-size: 1.5rem;
-  z-index: 10;
+body {
+  overflow-x: hidden;
 }
 
-.prev {
-  left: 2rem;
+/* ======= 全局滚动平滑行为 ======= */
+html {
+  scroll-behavior: smooth;
 }
-
-.next {
-  right: 2rem;
-}
-
-.projects {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  margin: 3rem auto;
-  max-width: 1000px;
-  padding: 0 1rem;
-}
-
-.project-card {
-  display: flex;
-  flex-wrap: wrap;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-  padding: 1rem;
-  transition: transform 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-}
-
-.project-video {
-  flex: 1 1 320px;
-  padding: 0.5rem;
-}
-
-.project-info {
-  flex: 2 1 400px;
-  padding: 0.5rem 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.project-info h2 a {
-  color: #0066cc;
-  text-decoration: none;
-}
-
-.project-info h2 a:hover {
-  text-decoration: underline;
-}
-
-.section-spacer {
-  height: 60px; /* 足够的空白高度 */
-  width: 100%;
-}
-
-.section-divider {
-  border: none;
-  border-top: 3px solid #ccc; /* 粗一点，更明显 */
-  margin: 40px 0;
-  width: 100%;
-}
-
