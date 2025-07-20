@@ -1,8 +1,10 @@
+- image: video2bev.png
+  caption: "Video2BEV: Transforming Drone Videos to BEVs for Video-based Geo-localization"
 - image: openuav.png
   caption: "Towards Realistic UAV Vision-Language Navigation: Platform, Benchmark, and Methodology"
 - image: aeroduo1.png
   caption: "AeroDuo: Aerial Duo for UAV-based Vision and Language Navigation"
 - image: airstar.png
-  caption: "Hi AirStar, Guide Me to the Badminton Court."
+  caption: "Hi AirStar, Guide Me to the Badminton Court"
 - image: uav_flow.png
   caption: "UAV-Flow Colosseo: A Real-World Benchmark for Flying-on-a-Word UAV Imitation Learning"

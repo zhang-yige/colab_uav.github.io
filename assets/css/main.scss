@@ -3,89 +3,115 @@
 
 @import "carousel";
 @import "project";
+@import "peoples";
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px; // 空隙
+  margin: 60px auto;
+  max-width: 90%;
+  padding: 0 20px;
+  flex-wrap: wrap; // 小屏响应式换行
 }
+
+.hero-image {
+  width: 65%;
+  height: auto;
+  // border-radius: 12px;
+  // box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  min-width: 280px;
+}
+
+.hero-description {
+  width: 30%;
+  font-size: 1.2rem;
+  color: #444;
+  line-height: 1.6;
+  min-width: 280px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 
 /* ======= Header 样式（响应式 + 黑字） ======= */
 #site-header {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
+  top: 0;
   z-index: 1000;
-  padding: 1rem 0;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
   background-color: transparent;
-  color: black; // 默认字体为黑色
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
 
-#site-header.scrolled {
-  background-color: white;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
-.nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
+  .branding {
+    display: flex;
+    align-items: center;
 
-.branding {
-  display: flex;
-  align-items: center;
-}
+    img {
+      height: 40px;
+      margin-right: 10px;
+    }
 
-.branding img {
-  height: 40px;
-  margin-right: 10px;
-}
+    .site-name {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: black;
+    }
+  }
 
-.site-name {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: black;
-}
+  .navbar a {
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    color: black;
+    transition: color 0.3s;
+  }
 
-.navbar {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
+  .navbar a:hover {
+    color: #007BFF;
+  }
 
-.navbar a {
-  margin-left: 20px;
-  text-decoration: none;
-  font-weight: 500;
-  color: black;
-
-  &:hover {
-    text-decoration: underline;
+  &.scrolled {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 }
 
-/* ======= Banner 图像样式 ======= */
-// banner 图像容器
-.banner-image {
-  margin-top: 80px; // 留出导航栏的空间
+.site-footer {
+  padding: 2rem 1rem;
   text-align: center;
+  font-size: 0.95rem;
+  color: #555;
 
-  img {
-    max-width: 100%;
-    height: auto;
+  .footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+
+    p {
+      margin: 0.5rem 0;
+    }
+
+    a {
+      color: #0066cc;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }
 
-body {
-  overflow-x: hidden;
-}
 
 /* ======= 全局滚动平滑行为 ======= */
 html {

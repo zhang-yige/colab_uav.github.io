@@ -4,17 +4,8 @@ description: >-
   Please concact us if you have any questions about the UAV projects.
 baseurl: "colab_uav.github.io"
 url: "https://zhang-yige.github.io/"
-
-# 在原有基础上添加导航配置
-navigation:
-  - name: "OpenUAV"
-    url: https://prince687028.github.io/OpenUAV/
-  - name: "AirStar"
-    url: https://buaa-colalab.github.io/airstar.github.io/
-  - name: "UAV-Flow"
-    url: https://prince687028.github.io/UAV-Flow/
-  - name: "AeroDuo"
-    url: https://rey-nard.github.io/AeroDuo_project/
+# baseurl: ""
+# url: ""
 
 
 # Build settings

@@ -1,24 +1,34 @@
-- title: "UAV-Flow Colosseo: A Real-World Benchmark for Flying-on-a-Word UAV Imitation Learning"
-  description: "UAV-Flow consists of a large-scale real-world dataset for language-conditioned UAV imitation learning, featuring multiple UAV platforms, diverse environments, and a wide range of fine-grained flight skill tasks. To enable systematic experimental analysis under the Flow task setting, we additionally provide a simulation-based evaluation protocol and deploy VLA models on real UAVs. To the best of our knowledge, this is the first real-world deployment of VLA models for language-guided UAV control in open environments."
-  url: https://prince687028.github.io/UAV-Flow/
-  type: video
-  video: "/assets/videos/uav_flow.mp4"
-  image: "uav_flow.png"
-
-- title: "Towards Realistic UAV Vision-Language Navigation: Platform, Benchmark, and Methodology"
-  description: "We propose a realistic UAV simulation platform and a novel UAV-Need-Help benchmark. The OpenUAV platform focuses on realistic UAV vision-language navigation tasks, integrating diverse environmental components, realistic flight simulations, and algorithmic support. The UAV-Need-Help benchmark introduces an assistant-guided UAV object search task, where the UAV navigates to a target object using object descriptions, environmental information, and guidance from assistants."
-  url: https://prince687028.github.io/OpenUAV/
-  type: image
-  image: "/assets/images/openuav.png"
-
-- title: "AeroDuo: Aerial Duo for UAV-based Vision and Language Navigation"
-  description: "We present DuAl-VLN, a novel framework where two UAVs collaborate at different altitudes—a high-altitude UAV for global reasoning and a low-altitude UAV for precise navigation—enabling efficient, autonomous flight guided by natural language. Powered by the HaL-13k dataset and our AeroDuo system, which combines a multimodal Pilot-LLM with lightweight navigation policies, this approach achieves a 15.7% higher success rate than single-UAV methods, demonstrating the power of collaborative aerial intelligence."
-  url: https://rey-nard.github.io/AeroDuo_project/
-  type: video
-  video: "/assets/videos/aeroduo.mp4"
-
 - title: "Hi AirStar, Guide Me to the Badminton Court."
+  author: "Ziqin Wang, Jinyu Chen, Xiangyi Zheng, Qinan Liao, Linjiang Huang, Si Liu"
   description: "AirStar transforms drones into smart aerial companions by integrating a large language model as its cognitive core, enabling natural voice and gesture control for intuitive interaction. It combines geospatial navigation with real-time reasoning for precise movement, while offering advanced features like question answering, automated filming, and target tracking. Designed for extensibility, AirStar paves the way for next-gen, instruction-driven UAV assistants."
   url: https://buaa-colalab.github.io/airstar.github.io/
   type: video
-  video: "/assets/videos/airstar.mp4"
+  video: airstar.mp4
+
+- title: "AeroDuo: Aerial Duo for UAV-based Vision and Language Navigation"
+  author: "Ruipu Wu*, Yige Zhang*, Jinyu Chen*, Linjiang Huang†, Shifeng Zhang, Xu Zhou, Liang Wang, Si Liu"
+  description: "We present DuAl-VLN, a novel framework where two UAVs collaborate at different altitudes—a high-altitude UAV for global reasoning and a low-altitude UAV for precise navigation—enabling efficient, autonomous flight guided by natural language. Powered by the HaL-13k dataset and our AeroDuo system, which combines a multimodal Pilot-LLM with lightweight navigation policies, this approach achieves a 15.7% higher success rate than single-UAV methods, demonstrating the power of collaborative aerial intelligence."
+  url: https://rey-nard.github.io/AeroDuo_project/
+  type: video
+  video: aeroduo.mp4
+
+- title: "Towards Realistic UAV Vision-Language Navigation: Platform, Benchmark, and Methodology"
+  author: "Xiangyu Wang*, Donglin Yang*, Ziqin Wang*, Hohin Kwan, Jinyu Chen, Wenjun Wu, Hongsheng Li, Yue Liao†, Si Liu†"
+  description: "We propose a realistic UAV simulation platform and a novel UAV-Need-Help benchmark. The OpenUAV platform focuses on realistic UAV vision-language navigation tasks, integrating diverse environmental components, realistic flight simulations, and algorithmic support. The UAV-Need-Help benchmark introduces an assistant-guided UAV object search task, where the UAV navigates to a target object using object descriptions, environmental information, and guidance from assistants."
+  url: https://prince687028.github.io/OpenUAV/
+  type: image
+  image: openuav.png
+
+- title: "UAV-Flow Colosseo: A Real-World Benchmark for Flying-on-a-Word UAV Imitation Learning"
+  author: "Xiangyu Wang*, Donglin Yang*, Yue Liao*, Wenhao Zheng, Wenjun Wu, Bin Dai, Hongsheng Li, Si Liu†"
+  description: "UAV-Flow consists of a large-scale real-world dataset for language-conditioned UAV imitation learning, featuring multiple UAV platforms, diverse environments, and a wide range of fine-grained flight skill tasks. To enable systematic experimental analysis under the Flow task setting, we additionally provide a simulation-based evaluation protocol and deploy VLA models on real UAVs. To the best of our knowledge, this is the first real-world deployment of VLA models for language-guided UAV control in open environments."
+  url: https://prince687028.github.io/UAV-Flow/
+  type: video
+  video: uav_flow.mp4
+
+- title: "Video2BEV: Transforming Drone Videos to BEVs for Video-based Geo-localization"
+  author: "Hao Ju, Shaofei Huang, Si Liu, Zhedong Zheng"
+  description: "We present Video2BEV, a breakthrough approach that redefines drone geo-localization by converting drone videos into detailed Bird’s Eye View (BEV) maps for precise location matching. Unlike single-image methods, our Gaussian Splatting-based 3D reconstruction preserves fine-grained details without distortion, while a diffusion-powered hard negative sampling module enhances model adaptability. Tested on our new UniV dataset, featuring high-frame-rate drone flights, Video2BEV outperforms traditional methods—especially in low-altitude, occlusion-heavy scenarios—setting a new standard for robust, video-based geo-localization."
+  url: https://arxiv.org/abs/2411.13610
+  type: image
+  image: video2bev.png
