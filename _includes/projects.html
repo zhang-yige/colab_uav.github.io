@@ -1,0 +1,26 @@
+<section class="projects-carousel-section">
+  <h2 class="section-title">Projects</h2>
+  <div class="carousel" id="project-carousel">
+    {% for project in site.data.projects %}
+    <div class="carousel-item">
+      <div class="carousel-left">
+        <img src="{{ '/assets/images/' | append: project.image | relative_url }}" alt="{{ project.title }}">
+      </div>
+      <div class="carousel-right">
+        <h3 class="project-title">{{ project.title }}</h3>
+        <p class="project-author">{{ project.author }}</p>
+        <p class="project-description">{{ project.description }}</p>
+        {% if project.paper_url %}
+        <a href="{{ project.paper_url }}" target="_blank" class="project-link">Paper</a>
+        {% endif %}
+        {% if project.homepage_url %}
+        <a href="{{ project.homepage_url }}" target="_blank" class="project-link">Homepage</a>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+    <!-- 控制按钮 -->
+    <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
+  </div>
+</section>
