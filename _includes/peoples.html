@@ -29,7 +29,9 @@
     <div class="students-list">
       <h3>Students</h3>
       <ul id="student-names">
-        <!-- JS 动态填充学生列表 -->
+        {% for student in site.data.students %}
+          <li>{{ student }}</li>
+        {% endfor %}
       </ul>
     </div>
   </div>
