@@ -1,29 +1,46 @@
-// 初始显示第一个项目
 document.addEventListener("DOMContentLoaded", () => {
-  moveSlide(0);
-});
-
-let currentIndex = 0;
-
-function moveSlide(direction) {
   const carousel = document.getElementById("project-carousel");
-  const items = carousel.querySelectorAll(".carousel-item");
-  const total = items.length;
+  let currentIndex = 0;
+  let intervalId = null;
+  const intervalTime = 2000; // 3秒切换一次，可根据需要调整
 
-  currentIndex = (currentIndex + direction + total) % total;
+  // 移动幻灯片函数
+  function moveSlide(direction) {
+    const items = carousel.querySelectorAll(".carousel-item");
+    const total = items.length;
 
-  items.forEach((item, index) => {
-    item.style.display = index === currentIndex ? "flex" : "none";
-  });
-}
+    currentIndex = (currentIndex + direction + total) % total;
 
-// 初始显示第一个项目
-document.addEventListener("DOMContentLoaded", () => {
+    items.forEach((item, index) => {
+      item.style.display = index === currentIndex ? "flex" : "none";
+    });
+  }
+
+  // 启动自动轮播
+  function startAutoSlide() {
+    if (!intervalId) {
+      intervalId = setInterval(() => {
+        moveSlide(1); // 向右轮播
+      }, intervalTime);
+    }
+  }
+
+  // 停止自动轮播
+  function stopAutoSlide() {
+    if (intervalId) {
+      clearInterval(intervalId);
+      intervalId = null;
+    }
+  }
+
+  // 初始化
   moveSlide(0);
+  startAutoSlide();
 
-  // 添加自动轮播，5000 表示 5 秒切换一次
-  setInterval(() => {
-    moveSlide(1); // 向右轮播
-  }, 1000); // 修改这里可以改变轮播速度（以毫秒为单位）
+  // 鼠标悬停暂停
+  carousel.addEventListener("mouseenter", stopAutoSlide);
+  carousel.addEventListener("mouseleave", startAutoSlide);
+
+  // 暴露moveSlide给外部使用（如果需要手动按钮控制）
+  window.moveSlide = moveSlide;
 });
-

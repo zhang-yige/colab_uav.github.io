@@ -6,13 +6,24 @@
 @import "projects";
 @import "people";
 
+.header-image-container {
+  width: 100%;
+  overflow: hidden; // 防止图片溢出容器
+  
+  .header-image {
+      width: 100%;
+      height: auto; // 保持原始比例
+      display: block; // 移除图片下方的空白间隙
+  }
+}
+
+
 .hero-section {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 40px; // 空隙
-  // margin: 60px auto;
-  margin: 60px auto 20px;
+  margin: 0 auto;
   max-width: 90%;
   padding: 0rem 1rem;
   // padding: 0 20px;
@@ -35,6 +46,13 @@
   line-height: 1.6;
   min-width: 280px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #222;
 }
 
 
