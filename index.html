@@ -3,22 +3,17 @@ layout: default
 title: Home
 ---
 
+{% include intro.html %}
+
 <!-- 加 id 让导航可锚点跳转 -->
-<section id="home">
+<section id="overview">
 
 <h2 class="section-title">Overview</h2>
+{% include overview.html %}
   <!-- Hero Section -->
-<div class="hero-section">
+<!-- <div class="hero-section">
   <img src="{{ '/assets/images/banner.png' | relative_url }}" alt="Hero Image" class="hero-image">
-  <div class="hero-description">
-    <p>
-      We specialize in large model-enabled intelligent human-drone interaction research, achieving breakthroughs in language-guided UAV control—including short-range operation, long-range planning, and multi-agent collaboration—with integrated multi-modal interaction systems.
-    </p>
-    <p>
-      Future efforts will focus on cutting-edge directions: control-planning dual systems, edge-device lightweight large model deployment, heterogeneous intelligent agent coordination, and drone-manipulator hybrid systems.
-    </p>
-  </div>
-</div>
+</div> -->
 
 <section id="projects">
 {% include projects.html %}
