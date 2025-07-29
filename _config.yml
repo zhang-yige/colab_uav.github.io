@@ -2,10 +2,10 @@ title: Colab UAVs
 email: colalab@buaa.edu.cn
 description: >-
   Please concact us if you have any questions about the UAV projects.
-# baseurl: "colab_uav.github.io"
-# url: "https://zhang-yige.github.io/"
-baseurl: ""
-url: ""
+baseurl: "colab_uav.github.io"
+url: "https://zhang-yige.github.io/"
+# baseurl: ""
+# url: ""
 
 
 # Build settings
