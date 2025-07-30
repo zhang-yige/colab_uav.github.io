@@ -7,12 +7,13 @@
 @import "people";
 @import "intro";
 @import "overview";
+@import "banner";
 
 .header-image-container {
   display: flex;
   justify-content: center; // 水平居中
-  width: 100%;
-  padding: 0 0 5% 0;     // 替代原来的width:90%
+  width: 70%;
+  padding: 0 0 15% 15%;     // 替代原来的width:90%
   
   .header-image {
     width: 70%;
