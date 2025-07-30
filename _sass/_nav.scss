@@ -46,7 +46,6 @@ body.nav-collapsed .nav-toggle-container {
   left: 1rem;
 }
 
-
 /* 导航头部 */
 .nav-header {
   display: flex;
@@ -137,13 +136,8 @@ body.nav-collapsed .nav-toggle-container {
   .side-nav {
     transform: translateX(-100%);
   }
-  
   .side-nav.expanded {
     transform: translateX(0);
-  }
-  
-  .branding img {
-    max-width: 40px; /* 减小logo高度 */
   }
 
   /* 内容不留侧边栏宽度 */
@@ -153,6 +147,9 @@ body.nav-collapsed .nav-toggle-container {
 
   /* 内容在导航展开时右移 */
   .side-nav.expanded + #main-content {
-    margin-left: 10%; /* 与侧边栏宽度一致 */
+    margin-left: 10%;
+  }
+  .branding img {
+    max-width: 40px; /* 减小logo高度 */
   }
 }
