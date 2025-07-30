@@ -100,7 +100,9 @@
       img {
         width: 100%;
         height: auto;
+        aspect-ratio: 4 / 3; // 或 16 / 9，根据你希望的比例
         object-fit: cover;
+        display: block;
         transition: transform 0.3s ease;
       }
       
@@ -116,6 +118,9 @@
         text-align: center;
         background: rgba(255, 255, 255, 0.9);
         font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     }
   }
@@ -152,6 +157,7 @@
   
     .projects-container {
       flex: 1;
+      align-items: stretch; // 强制子项等高
     }
     
     > div {
