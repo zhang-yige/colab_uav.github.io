@@ -61,7 +61,7 @@
 }
 
 
-/* ======= Header 样式（响应式 + 黑字） ======= */
+/* ======= Header导航栏 样式（响应式 + 黑字） ======= */
 #site-header {
   position: fixed;
   width: 100%;
@@ -142,4 +142,15 @@
 /* ======= 全局滚动平滑行为 ======= */
 html {
   scroll-behavior: smooth;
+}
+
+.project-jump-link {
+  color: #007cf0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: #005bb5;
+    text-decoration: underline;
+  }
 }

@@ -11,6 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 9rem;
   
   /* 更浅的遮罩，透明度从0.3降到0.15 */
   &::before {

@@ -1,46 +1,72 @@
 document.addEventListener("DOMContentLoaded", () => {
   const carousel = document.getElementById("project-carousel");
+  const items = carousel.querySelectorAll(".carousel-item");
+  const dotsContainer = document.createElement("div");
+  dotsContainer.classList.add("carousel-dots");
+
   let currentIndex = 0;
-  let intervalId = null;
-  const intervalTime = 3000; // 3秒切换一次，可根据需要调整
 
-  // 移动幻灯片函数
-  function moveSlide(direction) {
-    const items = carousel.querySelectorAll(".carousel-item");
-    const total = items.length;
+  function moveSlide(index) {
+    items.forEach((item, i) => {
+      if (i === index) {
+        item.classList.add("active");
+      } else {
+        item.classList.remove("active");
 
-    currentIndex = (currentIndex + direction + total) % total;
-
-    items.forEach((item, index) => {
-      item.style.display = index === currentIndex ? "flex" : "none";
+        // 暂停上一项中的视频，防止多视频同时播放
+        const video = item.querySelector("video");
+        if (video && !video.paused) {
+          video.pause();
+          video.currentTime = 0;
+        }
+      }
     });
+
+    // 更新圆点状态
+    const dots = dotsContainer.querySelectorAll(".dot");
+    dots.forEach((dot, i) => {
+      dot.classList.toggle("active", i === index);
+    });
+
+    currentIndex = index;
   }
 
-  // 启动自动轮播
-  function startAutoSlide() {
-    if (!intervalId) {
-      intervalId = setInterval(() => {
-        moveSlide(1); // 向右轮播
-      }, intervalTime);
-    }
-  }
+  // 初始化圆点
+  items.forEach((_, index) => {
+    const dot = document.createElement("span");
+    dot.classList.add("dot");
+    if (index === 0) dot.classList.add("active");
+    dot.addEventListener("click", () => moveSlide(index));
+    dotsContainer.appendChild(dot);
+  });
 
-  // 停止自动轮播
-  function stopAutoSlide() {
-    if (intervalId) {
-      clearInterval(intervalId);
-      intervalId = null;
-    }
-  }
+  carousel.appendChild(dotsContainer);
 
-  // 初始化
+  window.moveSlide = function(direction) {
+    const total = items.length;
+    const newIndex = (currentIndex + direction + total) % total;
+    moveSlide(newIndex);
+  };
+
+  // 初始化第一张
   moveSlide(0);
-  startAutoSlide();
-
-  // 鼠标悬停暂停
-  carousel.addEventListener("mouseenter", stopAutoSlide);
-  carousel.addEventListener("mouseleave", startAutoSlide);
-
-  // 暴露moveSlide给外部使用（如果需要手动按钮控制）
-  window.moveSlide = moveSlide;
 });
+
+// 在现有的JS代码中添加这个函数
+function goToSlideById(slideId) {
+  const items = document.querySelectorAll('.carousel-item');
+  let targetIndex = -1;
+  
+  items.forEach((item, index) => {
+    if (item.id === slideId) {
+      targetIndex = index;
+    }
+  });
+  
+  if (targetIndex !== -1) {
+    moveSlide(targetIndex);
+  }
+}
+
+// 暴露这个函数给全局
+window.goToSlideById = goToSlideById;

@@ -1,0 +1,186 @@
+.projects-carousel-section {
+  padding: 4rem 1rem;
+  position: relative;
+  width: 80%;  // 设置宽度为80%
+  max-width: 1200px;  // 添加最大宽度限制
+  margin: 0 auto;  // 水平居中
+
+  .section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #222;
+  }
+
+  .carousel {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .carousel-item {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: opacity 0.4s ease;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      position: relative;
+    }
+  }
+
+  .carousel-media {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    img,
+    video {
+      width: 30%;
+      max-width: 100%;
+      flex: 1 1 30%;
+      min-width: 250px;
+      border-radius: 12px;
+      object-fit: contain; // 改为contain，确保不裁剪
+      aspect-ratio: 16 / 9; // 保持比例
+      background-color: #ffffff; // 避免透明背景下露出空白
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    video {
+      max-height: unset; // ✅ 移除限制，允许按比例显示
+    }
+  }
+
+
+  .carousel-text {
+    width: 100%;
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .project-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      background: linear-gradient(to right, #007cf0, #00dfd8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-author {
+      color: #888;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-description {
+      color: #333;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .project-link {
+      display: inline-block;
+      margin: 0.5rem 0.5rem 0;
+      padding: 0.4rem 1rem;
+      background-color: #007cf0;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.9rem;
+
+      &:hover {
+        background-color: #005bb5;
+      }
+    }
+  }
+
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.2);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+    border-radius: 6px;
+
+    &.prev {
+      left: 10px;
+    }
+
+    &.next {
+      right: 10px;
+    }
+  }
+
+  .carousel-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 0.5rem;
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &.active {
+      background-color: #007cf0;
+    }
+  }
+}
+
+}
+
+// 响应式调整
+@media (max-width: 768px) {
+  .carousel-media {
+    flex-direction: column;
+    align-items: center;
+
+    img,
+    video {
+      width: 100%;
+      max-width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+    }
+  }
+
+  .carousel-text {
+    padding: 1rem;
+  }
+
+  .carousel-btn {
+    top: auto;
+    bottom: 10px;
+    transform: none;
+    font-size: 1.5rem;
+
+    &.prev {
+      left: 20%;
+    }
+
+    &.next {
+      right: 20%;
+    }
+  }
+}

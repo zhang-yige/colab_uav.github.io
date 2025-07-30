@@ -1,194 +1,131 @@
-.overview-structure {
+.overview {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 3rem;
+  gap: 2rem;
   padding: 2rem;
+  width: 80%;  // 设置宽度为80%
+  max-width: 1200px;  // 添加最大宽度限制
+  margin: 0 auto;  // 水平居中
 
-  .level {
-    width: 100%;
-    max-width: 1200px;
-    position: relative;
-    padding: 1rem;
-    border-radius: 16px;
-    background: white;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-    &:hover {
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-    }
-
-    // 大层级标题（用于顶部与底部层级）
-    .level-header {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 10px;
-      margin-bottom: 1.5rem;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-
-    // 各层配色
-    &.simulation .level-header {
-      background: linear-gradient(135deg, #f3c623, #f6b100);
-    }
-
-    &.system .level-header {
-      background: linear-gradient(135deg, #2ecc71, #27ae60);
-    }
-
-    &.middle .section-header {
-      background: linear-gradient(135deg, #369fff, #0077e6);
-    }
-
-    .projects-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      justify-content: center;
-      padding: 0;
-      flex: 1;
-
-      &.grouped {
-        border: 1px dashed rgba(0, 0, 0, 0.1);
-        border-radius: 12px;
-        padding: 1.5rem;
-        background: rgba(255, 255, 255, 0.7);
-      }
-    }
-
-    .projects-box {
-      flex: 1;
-      min-width: 300px;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-
-      .section-header {
-        font-size: 1.4rem;
-        font-weight: 600;
-        color: white;
-        padding: 0.8rem 1.2rem;
-        border-radius: 8px;
-        margin-bottom: 0.5rem;
-        text-align: center;
-        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-      }
-    }
-
-    .project {
-      flex: 1;
-      max-width: 100%;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      overflow: hidden;
-      border-radius: 12px;
-      background: white;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-      
-      &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-      }
-      
-      img {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 4 / 3; // 或 16 / 9，根据你希望的比例
-        object-fit: cover;
-        display: block;
-        transition: transform 0.3s ease;
-      }
-      
-      &:hover img {
-        transform: scale(1.03);
-      }
-      
-      .caption {
-        width: 100%;
-        padding: 0.8rem;
-        font-size: 1rem;
-        color: #333;
-        text-align: center;
-        background: rgba(255, 255, 255, 0.9);
-        font-weight: 500;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    }
-  }
-
-  .arrow-between {
+  .overview-row {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 40px;
-  }
-  
-  .arrow {
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(135deg, #6e8efb, #a777e3);
-    clip-path: polygon(50% 100%, 100% 70%, 70% 70%, 70% 0%, 30% 0%, 30% 70%, 0% 70%);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  }
-
-  // 横向排列中间层两块
-  .middle-container {
-    display: flex;
-    gap: 0.5rem;
     justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: stretch;
+    align-items: flex-start;
+    // flex-wrap: wrap;
+    flex-wrap: nowrap; // 不允许卡片自动换行
+    gap: 1rem;
 
-    > .projects-box {
-      flex: 1;
-      min-width: 300px;
+    .overview-left {
       display: flex;
-      flex-direction: column;
-    }
-  
-    .projects-container {
-      flex: 1;
-      align-items: stretch; // 强制子项等高
-    }
-    
-    > div {
-      flex: 1;
-      min-width: 300px;
-    }
-  }
-
-  @media (max-width: 768px) {
-    gap: 2rem;
-    padding: 0.5rem;
-    
-    .level {
-      padding: 1.5rem;
-      
-      .level-header {
-        font-size: 1.5rem;
-      }
-      
-      .projects-container {
-        gap: 1rem;
-      }
-      
-      .project {
-        min-width: 100%;
-      }
-    }
-    
-    .middle-container {
-      flex-direction: column;
       gap: 0.5rem;
+      flex: 1 1 60%;
+      flex-wrap: nowrap;
+
+      .project-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        text-decoration: none;
+        padding: 0.3rem;
+        transition: transform 0.3s ease;
+        // flex: 1 1 calc(50% - 0.5rem);
+        min-width: 20%;
+
+        .card-content {
+          display: flex;
+          gap: 0.5rem;
+
+          img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            object-fit: cover;
+          }
+        }
+
+        .project-label {
+          margin-top: 0.2rem;
+          font-size: 1rem;
+          font-weight: 600;
+          color: #333;
+          text-align: center;
+        }
+
+        &:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        &.two-images {
+          width: 100%;
+
+          .card-content img {
+            width: 50%;
+          }
+        }
+
+        &.one-image {
+          width: calc(50% - 0.5rem);
+          flex: 0 0 calc(50% - 0.5rem); // 尽量并排两个
+          min-width: 250px; // 限制不能太小
+      // max-width: 100%;
+
+          .card-content img {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .overview-right {
+      flex: 1 1 35%;
+
+      .text-block {
+        position: relative;
+        background: #f5f8fa;
+        padding: 1rem 1.5rem;
+        border-left: 4px solid #007acc;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #333;
+
+        .arrow-up {
+          position: absolute;
+          bottom: -1.2rem;
+          left: 50%;
+          transform: translateX(-50%) rotate(45deg);
+          width: 20px;
+          height: 20px;
+          background: #f5f8fa;
+          border-left: 4px solid #007acc;
+          border-top: 4px solid #007acc;
+        }
+      }
     }
   }
 }
+
+// 响应式设计
+@media (max-width: 600px) {
+  .overview-row {
+    flex-direction: column;
+
+    .overview-left {
+      flex-wrap: wrap; // 允许卡片换行
+      overflow-x: visible;
+
+      .project-card.one-image {
+        flex: 1 1 100%; // 每个单独一行
+      }
+    }
+
+    .overview-right .text-block .arrow-up {
+      display: none;
+    }
+  }
+}
+
