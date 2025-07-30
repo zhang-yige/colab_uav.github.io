@@ -7,6 +7,13 @@
   max-width: 1200px;  // 添加最大宽度限制
   margin: 0 auto;  // 水平居中
 
+  .section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #222;
+  }
+
   .overview-row {
     display: flex;
     justify-content: space-between;
@@ -110,21 +117,27 @@
 }
 
 // 响应式设计
-@media (max-width: 600px) {
-  .overview-row {
-    flex-direction: column;
+@media (max-width: 768px) {
+  .overview {
+    width: 100%; // 手机尺寸下宽度变为100%
+    padding: 1rem; // 减少内边距
+    
+    .overview-row {
+      flex-direction: column;
+      flex-wrap: wrap;
 
-    .overview-left {
-      flex-wrap: wrap; // 允许卡片换行
-      overflow-x: visible;
+      .overview-left {
+        flex-wrap: wrap; // 允许卡片换行
+        overflow-x: visible;
 
-      .project-card.one-image {
-        flex: 1 1 100%; // 每个单独一行
+        .project-card.one-image {
+          flex: 1 1 100%; // 每个单独一行
+        }
       }
-    }
 
-    .overview-right .text-block .arrow-up {
-      display: none;
+      .overview-right .text-block .arrow-up {
+        display: none;
+      }
     }
   }
 }

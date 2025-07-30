@@ -1,0 +1,27 @@
+<div class="nav-toggle-container">
+  <button id="nav-toggle">☰</button>
+</div>
+<aside id="side-nav" class="side-nav">
+  <div class="nav-header">
+    <div class="branding">
+      <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="Colab Logo">
+      <span class="site-name">Colab UAVs</span>
+    </div>
+  </div>
+
+  <nav class="nav-menu">
+    <a href="#overview" class="nav-link">Overview</a>
+
+    <div class="nav-item has-children">
+      <button class="submenu-toggle">Projects ▼</button>
+      <div class="submenu">
+        {% for project in site.data.projects %}
+          <a href="#{{ project.id }}" class="nav-link project-link" data-slide-id="{{ project.id }}">{{ project.id }}</a>
+        {% endfor %}
+      </div>
+    </div>
+
+    <a href="#people" class="nav-link">People</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </nav>
+</aside>

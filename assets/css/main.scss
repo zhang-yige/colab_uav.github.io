@@ -1,8 +1,7 @@
 ---
 ---
 
-// @import "carousel";
-// @import "project";
+@import "nav";
 @import "projects";
 @import "people";
 @import "intro";
@@ -12,132 +11,17 @@
 .header-image-container {
   display: flex;
   justify-content: center; // 水平居中
+  align-items: center;
   width: 80%;
-  padding: 0 0 10% 10%;     // 替代原来的width:90%
+  padding: 0rem 1rem;
+  flex-wrap: wrap; // 小屏响应式换行
   
   .header-image {
     width: 70%;
     height: auto;
-    display: block;
+    flex-shrink: 0;
   }
 }
-
-
-.hero-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px; // 空隙
-  margin: 0 auto;
-  max-width: 90%;
-  padding: 0rem 1rem;
-  // padding: 0 20px;
-  flex-wrap: wrap; // 小屏响应式换行
-}
-
-.hero-image {
-  width: 65%;
-  height: auto;
-  // border-radius: 12px;
-  // box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  flex-shrink: 0;
-  min-width: 280px;
-}
-
-.hero-description {
-  width: 30%;
-  font-size: 1.2rem;
-  color: #444;
-  line-height: 1.6;
-  min-width: 280px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-.section-title {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #222;
-}
-
-
-/* ======= Header导航栏 样式（响应式 + 黑字） ======= */
-#site-header {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  background-color: transparent;
-
-  .nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .branding {
-    display: flex;
-    align-items: center;
-
-    img {
-      height: 40px;
-      margin-right: 10px;
-    }
-
-    .site-name {
-      font-size: 1.5em;
-      font-weight: bold;
-      color: black;
-    }
-  }
-
-  .navbar a {
-    margin-left: 20px;
-    text-decoration: none;
-    font-weight: 500;
-    color: black;
-    transition: color 0.3s;
-  }
-
-  .navbar a:hover {
-    color: #007BFF;
-  }
-
-  &.scrolled {
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-}
-
-.site-footer {
-  padding: 2rem 1rem;
-  text-align: center;
-  font-size: 0.95rem;
-  color: #555;
-
-  .footer-content {
-    max-width: 800px;
-    margin: 0 auto;
-
-    p {
-      margin: 0.5rem 0;
-    }
-
-    a {
-      color: #0066cc;
-      text-decoration: none;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-}
-
 
 /* ======= 全局滚动平滑行为 ======= */
 html {

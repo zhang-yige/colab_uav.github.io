@@ -152,35 +152,40 @@
 
 // 响应式调整
 @media (max-width: 768px) {
-  .carousel-media {
-    flex-direction: column;
-    align-items: center;
+  .projects-carousel-section {
+    padding: 0 0;
+    width: 100%;  // 设置宽度为80%
 
-    img,
-    video {
-      width: 100%;
-      max-width: 100%;
-      aspect-ratio: 16 / 9;
-      object-fit: contain;
-    }
-  }
+    .carousel-media {
+      flex-direction: column;
+      align-items: center;
 
-  .carousel-text {
-    padding: 1rem;
-  }
-
-  .carousel-btn {
-    top: auto;
-    bottom: 10px;
-    transform: none;
-    font-size: 1.5rem;
-
-    &.prev {
-      left: 20%;
+      img,
+      video {
+        width: 100%;
+        max-width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: contain;
+      }
     }
 
-    &.next {
-      right: 20%;
+    .carousel-text {
+      padding: 1rem;
+    }
+
+    .carousel-btn {
+      top: auto;
+      bottom: 10px;
+      transform: none;
+      font-size: 1.5rem;
+
+      &.prev {
+        left: 20%;
+      }
+
+      &.next {
+        right: 20%;
+      }
     }
   }
 }

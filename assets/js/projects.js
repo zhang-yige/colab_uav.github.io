@@ -52,7 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
   moveSlide(0);
 });
 
-// 在现有的JS代码中添加这个函数
 function goToSlideById(slideId) {
   const items = document.querySelectorAll('.carousel-item');
   let targetIndex = -1;
