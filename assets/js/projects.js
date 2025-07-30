@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const carousel = document.getElementById("project-carousel");
   let currentIndex = 0;
   let intervalId = null;
-  const intervalTime = 2000; // 3秒切换一次，可根据需要调整
+  const intervalTime = 3000; // 3秒切换一次，可根据需要调整
 
   // 移动幻灯片函数
   function moveSlide(direction) {
