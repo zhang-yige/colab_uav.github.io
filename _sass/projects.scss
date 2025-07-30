@@ -107,39 +107,39 @@
       right: 10px;
     }
   }
+  
+}
 
-  @media (max-width: 768px) {
-    .carousel-item {
-      flex-direction: column;
-      align-items: stretch;
-      min-height: auto; // 不限制高度
+@media (max-width: 768px) {
+  .carousel-item {
+    flex-direction: column;
+    align-items: stretch;
+    min-height: auto; // 不限制高度
+  }
+
+  .carousel-left img {
+    width: 100%;
+    max-height: 200px; // 限制移动端高度防止过长
+    border-radius: 12px 12px 0 0;
+  }
+
+  .carousel-right {
+    border-radius: 0 0 12px 12px;
+    padding: 1rem;
+  }
+
+  .carousel-btn {
+    top: auto;
+    bottom: 10px;
+    transform: none;
+    font-size: 1.5rem;
+
+    &.prev {
+      left: 20%;
     }
-  
-    .carousel-left img {
-      width: 100%;
-      max-height: 200px; // 限制移动端高度防止过长
-      border-radius: 12px 12px 0 0;
-    }
-  
-    .carousel-right {
-      border-radius: 0 0 12px 12px;
-      padding: 1rem;
-    }
-  
-    .carousel-btn {
-      top: auto;
-      bottom: 10px;
-      transform: none;
-      font-size: 1.5rem;
-  
-      &.prev {
-        left: 20%;
-      }
-  
-      &.next {
-        right: 20%;
-      }
+
+    &.next {
+      right: 20%;
     }
   }
-  
 }
