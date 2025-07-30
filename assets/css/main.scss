@@ -9,13 +9,15 @@
 @import "overview";
 
 .header-image-container {
+  display: flex;
+  justify-content: center; // 水平居中
   width: 100%;
-  overflow: hidden; // 防止图片溢出容器
+  padding: 0 0 5% 0;     // 替代原来的width:90%
   
   .header-image {
-      width: 100%;
-      height: auto; // 保持原始比例
-      display: block; // 移除图片下方的空白间隙
+    width: 70%;
+    height: auto;
+    display: block;
   }
 }
 
