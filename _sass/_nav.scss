@@ -2,7 +2,7 @@
 .side-nav {
   position: fixed;
   top: 0; bottom: 0; left: 0;
-  width: 10%;
+  width: 12%;
   min-width: 120px; /* 添加最小宽度防止过窄 */
   background: #ffffff;
   color: #000000;
@@ -121,7 +121,7 @@ body.nav-collapsed .nav-toggle-container {
 
 /* 主内容区域，默认留出侧边栏宽度 */
 #main-content {
-  margin-left: 10%;
+  margin-left: 12%;
   transition: margin-left 0.3s ease;
   padding: 1rem;
 }

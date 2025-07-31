@@ -6,6 +6,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let currentIndex = 0;
 
+  // 创建 id 到 index 的映射
+  const idToIndexMap = {};
+  items.forEach((item, index) => {
+    const id = item.id;
+    if (id) {
+      idToIndexMap[id] = index;
+    }
+  });
+
   function moveSlide(index) {
     items.forEach((item, i) => {
       if (i === index) {
@@ -29,6 +38,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     currentIndex = index;
+
+    carousel.scrollIntoView({ behavior: "smooth" });
   }
 
   // 初始化圆点
@@ -50,22 +61,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 初始化第一张
   moveSlide(0);
-});
 
-function goToSlideById(slideId) {
-  const items = document.querySelectorAll('.carousel-item');
-  let targetIndex = -1;
-  
-  items.forEach((item, index) => {
-    if (item.id === slideId) {
-      targetIndex = index;
+  function checkHashAndJump() {
+    const hash = window.location.hash.replace("#", "");
+    if (hash && idToIndexMap.hasOwnProperty(hash)) {
+      const index = idToIndexMap[hash];
+      moveSlide(index);
     }
-  });
-  
-  if (targetIndex !== -1) {
-    moveSlide(targetIndex);
   }
-}
 
-// 暴露这个函数给全局
-window.goToSlideById = goToSlideById;
+  // 初始化时检测一次
+  checkHashAndJump();
+
+  // 监听 hash 改变（如果用户在页面中点击了锚点链接）
+  window.addEventListener("hashchange", checkHashAndJump);
+});

@@ -16,7 +16,7 @@
       <button class="submenu-toggle">Projects ▼</button>
       <div class="submenu">
         {% for project in site.data.projects %}
-          <a href="#{{ project.id }}" class="nav-link project-link" data-slide-id="{{ project.id }}">{{ project.id }}</a>
+          <a href="#{{ project.id }}" class="nav-link">{{ project.id }}</a>
         {% endfor %}
       </div>
     </div>

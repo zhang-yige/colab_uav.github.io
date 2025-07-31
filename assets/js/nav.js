@@ -1,50 +1,84 @@
 document.addEventListener('DOMContentLoaded', function () {
   const sideNav = document.getElementById('side-nav');
   const navToggle = document.getElementById('nav-toggle');
-  const submenuToggle = sideNav.querySelector('.submenu-toggle');
+  const overlay = document.getElementById("nav-overlay");
+  const navLinks = document.querySelectorAll(".nav-link");
+  const submenuToggles = document.querySelectorAll(".submenu-toggle");
+  const submenus = document.querySelectorAll(".has-children");
 
-  // 宽屏默认展开，窄屏默认收起
-  function checkScreen() {
-    if (window.innerWidth <= 768) {
-      sideNav.classList.add('collapsed');
-    } else {
-      sideNav.classList.remove('collapsed');
-    }
+  function isMobile() {
+    return window.innerWidth <= 768;
   }
-  checkScreen();
 
-  window.addEventListener('resize', checkScreen);
+  // 控制导航栏展开与关闭
+  function openMobileNav() {
+    sideNav.classList.add("open");
+    overlay.classList.add("visible");
+  }
+
+  function closeMobileNav() {
+    sideNav.classList.remove("open");
+    overlay.classList.remove("visible");
+  }
 
   // 导航开关按钮
-  navToggle.addEventListener('click', function () {
+  function toggleDesktopCollapse() {
     sideNav.classList.toggle('collapsed');
-    document.body.classList.toggle('nav-collapsed');
+    document.body.classList.toggle("nav-collapsed");
+  }
+  // ☰ 按钮点击
+  navToggle.addEventListener("click", () => {
+    if (isMobile()) {
+      sideNav.classList.contains("open") ? closeMobileNav() : openMobileNav();
+    } else {
+      toggleDesktopCollapse();
+    }
   });
 
-  // 子菜单展开/收起
-  submenuToggle.addEventListener('click', function () {
-    sideNav.querySelector('.has-children').classList.toggle('open');
-  });
-
-  // 二级导航跳转 & 轮播 slide 控制
-  const projectLinks = sideNav.querySelectorAll('.project-link');
-  projectLinks.forEach(link => {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      const slideId = this.dataset.slideId;
-      const targetId = this.getAttribute('href').substring(1);
-      const targetElem = document.getElementById(targetId);
-      if (targetElem) {
-        targetElem.scrollIntoView({ behavior: 'smooth' });
-      }
-      // 调用你的轮播跳转函数
-      if (typeof goToSlideById === 'function') {
-        goToSlideById(slideId);
-      }
-      // 窄屏点击后收起导航栏
-      if (window.innerWidth <= 768) {
-        sideNav.classList.remove('expanded');
+  // 点击链接后（仅移动端）关闭导航栏
+  navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      if (isMobile()) {
+        closeMobileNav();
       }
     });
   });
+
+  // 点击遮罩层关闭导航（仅移动端）
+  overlay.addEventListener("click", () => {
+    if (isMobile()) {
+      closeMobileNav();
+    }
+  });
+
+  // 子菜单 toggle 按钮行为（桌面可点击，手机不响应）
+  submenuToggles.forEach(toggle => {
+    toggle.addEventListener("click", (e) => {
+      if (!isMobile()) {
+        const parent = toggle.closest(".has-children");
+        parent.classList.toggle("open");
+      }
+    });
+  });
+
+  // 初始化：在手机上自动展开所有子菜单
+  function autoExpandSubmenusOnMobile() {
+    if (isMobile()) {
+      submenus.forEach(item => {
+        item.classList.add("open");
+      });
+    } else {
+      submenus.forEach(item => {
+        item.classList.remove("open");
+      });
+    }
+  }
+
+  autoExpandSubmenusOnMobile();
+
+  // 窗口尺寸变化时自动处理子菜单状态
+  window.addEventListener("resize", () => {
+    autoExpandSubmenusOnMobile();
+  });
+
 });
