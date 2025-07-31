@@ -38,8 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     currentIndex = index;
-
-    carousel.scrollIntoView({ behavior: "smooth" });
   }
 
   // 初始化圆点
