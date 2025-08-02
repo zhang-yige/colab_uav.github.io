@@ -1,38 +1,11 @@
-<section class="peoples-section">
-  <div class="container">
-    <h2 class="section-title">People</h2>
-
-    <!-- 教师部分 -->
-    <div class="faculty-list">
-      <!-- <h3>Faculty</h3> -->
-      <div class="faculty-members">
-        <!-- 每位老师 -->
-        <div class="faculty-card">
-          <img src="{{ '/assets/images/liusi.png' | relative_url }}" alt="Si Liu" class="faculty-photo" />
-          <div class="faculty-info">
-            <h4>Si Liu</h4>
-            <p>Prof. Liu Si, who is the leader of the CoLab, is a professor in Beihang University. She holds positions as Council Member and Deputy Secretary-General of the China Society of Image and Graphics</p>
-          </div>
-        </div>
-
-        <div class="faculty-card">
-          <img src="{{ '/assets/images/linjiang.png' | relative_url }}" alt="Linjiang Huang" class="faculty-photo" />
-          <div class="faculty-info">
-            <h4>Linjiang Huang</h4>
-            <p>Prof. Linjiang Huang is currently a faculty member of the CoLab and a Professor in Beihang University</p>
-          </div>
-        </div>
+<section id="people" class="people-section">
+  <h2>Our Team</h2>
+  <div class="people-grid">
+    {% for person in site.data.people %}
+      <div class="person-card">
+        <img src="{{ '/assets/images/' | append: person.photo | relative_url }}" alt="{{ person.name }} Photo">
+        <p class="person-name">{{ person.name }}</p>
       </div>
-    </div>
-
-    <!-- 学生部分 -->
-    <div class="students-list">
-      <!-- <h3>Students</h3> -->
-      <ul id="student-names">
-        {% for student in site.data.students %}
-          <li>{{ student }}</li>
-        {% endfor %}
-      </ul>
-    </div>
+    {% endfor %}
   </div>
 </section>

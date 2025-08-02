@@ -1,0 +1,13 @@
+<section class="news-section">
+  <h2 class="news-title">Latest News</h2>
+  <ul class="news-list">
+    {% for item in site.data.news %}
+      <li class="news-item">
+        <a href="{{ item.url }}" target="_blank" rel="noopener" class="news-link">
+          <span class="news-date">{{ item.date }}</span>
+          <span class="news-headline">{{ item.title }}</span>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>

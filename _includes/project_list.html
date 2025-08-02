@@ -1,26 +1,39 @@
-<!-- 添加一个有边距的容器，背景为浅灰色 -->
-<div class="project-list-container" style="background-color: #f9f9f9; max-width: 1200px; margin: 0 auto; padding: 2em;">
-
-  <div class="project-list">
+<section class="projects-section">
+  <h2 class="section-title">Projects</h2>
+  <div class="projects-container">
     {% for project in site.data.projects %}
-      <div class="project-item" style="display: flex; margin-bottom: 2em;">
-        <div class="media" style="flex: 1;">
-          {% if project.video %}
-            <video width="100%" controls style="max-height: 300px;">
-              <source src="{{ '/assets/videos/' | append: project.video | relative_url }}" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          {% elsif project.image %}
-            <img src="{{ '/assets/images/' | append: project.image | relative_url }}" alt="{{ project.title }}" style="max-width: 100%; max-height: 300px; object-fit: contain;">
-          {% endif %}
+      <div id="{{ project.id | slugify }}" class="project-card">
+        <div class="project-media">
+          {% for media in project.media %}
+            {% if media.type == "image" %}
+              <img src="{{ '/assets/images/' | append: media.src | relative_url }}" alt="Project image">
+            {% elsif media.type == "video" %}
+              <div class="video-wrapper">
+                <video controls playsinline preload="metadata">
+                  <source src="{{ '/assets/videos/' | append: media.src | relative_url }}" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            {% endif %}
+          {% endfor %}
         </div>
-        <div class="description" style="flex: 2; padding-left: 1em;">
-          <h3><a href="{{ project.url }}">{{ project.title }}</a></h3>
-          <p class="project-author">{{ project.author }}</p>
-          <p>{{ project.description }}</p>
+
+        <div class="project-info">
+          <h3 class="project-title">{{ project.title }}</h3>
+          <h4 class="project-subtitle">{{ project.subtitle }}</h4>
+          <p class="project-authors"><strong>Authors:</strong> {{ project.authors }}</p>
+          <p class="project-description">{{ project.description }}</p>
+          <div class="project-footer">
+            <p class="project-conference">{{ project.conference }}</p>
+            {% if project.paper_url %}
+            <a href="{{ project.paper_url }}" target="_blank" class="project-link">Paper</a>
+            {% endif %}
+            {% if project.homepage_url %}
+            <a href="{{ project.homepage_url }}" target="_blank" class="project-link">Homepage</a>
+            {% endif %}
+          </div>
         </div>
       </div>
     {% endfor %}
   </div>
-
-</div>
+</section>

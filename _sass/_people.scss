@@ -1,80 +1,54 @@
-.peoples-section {
-  padding: 4rem 1rem;
-  background-color: #f8f9fa;
+.people-section {
+  padding: 4rem 2rem;
+  text-align: center;
 
-  .section-title {
-    text-align: center;
+  h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
     color: #222;
   }
 
-  .faculty-list {
-    margin-bottom: 3rem;
-
-    h3 {
-      font-size: 1.5rem;
-      color: #333;
-      margin-bottom: 1rem;
-    }
-
-    .faculty-members {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-    }
-
-    .faculty-card {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      padding: 1rem;
-      max-width: 300px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-
-      .faculty-photo {
-        width: 120px;
-        height: 120px;
-        border-radius: 12px;
-        object-fit: cover;
-        margin-bottom: 1rem;
-      }
-
-      .faculty-info {
-        h4 {
-          margin: 0.5rem 0;
-          color: #0066cc;
-        }
-
-        p {
-          font-size: 0.95rem;
-          color: #555;
-        }
-      }
-    }
+  .people-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+    justify-items: center;
   }
 
-  .students-list {
-    h3 {
-      font-size: 1.5rem;
-      color: #333;
-      margin-bottom: 1rem;
-    }
+  .person-card {
+    width: 180px;
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: white;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+  }
 
-    ul {
-      list-style: none;
-      padding: 0;
-      columns: 2; // 多列展示学生名字
-      column-gap: 2rem;
+  .person-card:hover {
+    transform: translateY(-4px);
+  }
 
-      li {
-        font-size: 1rem;
-        padding: 0.25rem 0;
-        color: #444;
-      }
-    }
+  .person-card img {
+    width: auto;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 8px; // 圆角矩形
+    margin-bottom: 0.75rem;
+  }
+
+  .person-name {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.2;
+    margin: 0;
+    word-break: break-word;
+    margin-bottom: 0rem;
   }
 }

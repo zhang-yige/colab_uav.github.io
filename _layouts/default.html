@@ -10,9 +10,11 @@
     <script src="{{ '/assets/js/overview.js' | relative_url }}" defer></script>
   </head>
   <body>
+    <button id="nav-toggle" aria-label="Toggle navigation">☰</button>
+
     {% include nav.html %}
 
-    <div class="nav-overlay" id="nav-overlay"></div>
+    <div id="overlay"></div>
 
     <main id="main-content">
       {{ content }}

@@ -3,10 +3,12 @@
 
 @import "nav";
 @import "projects";
+@import "project_list";
 @import "people";
 @import "intro";
 @import "overview";
 @import "banner";
+@import "news";
 
 .header-image-container {
   display: flex;
@@ -23,18 +25,13 @@
   }
 }
 
+.site-footer {
+  background-color: #f9f9f9;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
 /* ======= 全局滚动平滑行为 ======= */
 html {
   scroll-behavior: smooth;
-}
-
-.project-jump-link {
-  color: #007cf0;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  
-  &:hover {
-    color: #005bb5;
-    text-decoration: underline;
-  }
 }
